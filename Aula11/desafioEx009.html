@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfandega</title>
+    <style>
+        body{
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de reconhecimento de nacionalidade</h1>
+
+    De onde você é? <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="checar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function checar(){
+            var txtnac = window.document.querySelector('input#txtnac');
+            var res = window.document.querySelector('div#res');
+            var pais = txtnac.value;
+
+            res.innerHTML = `Voce esta vivendo em ${pais}`;
+           
+            pais == 'Brasil' ? 
+                res.innerHTML += '<p>Voce é brasileiro</p>' 
+                : res.innerHTML += '<p>Voce é estrangeiro!</p>';
+            
+        }
+    </script>
+    
+</body>
+</html>
